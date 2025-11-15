@@ -10,8 +10,8 @@ def tick args
     b: 0,
   }
   args.state.terrain ||= [
-      { x: 640,          y: 360,          w: 32, h: 32, path: 'sprites/square/blue.png' },
-      { x: 640,          y: 360 - 32,     w: 32, h: 32, path: 'sprites/square/blue.png' },
+      { x: 640 - 32 * 2, y: 360 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
+      { x: 640 - 32,     y: 360 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
       { x: 640,          y: 360 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
       { x: 640 + 32,     y: 360 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
       { x: 640 + 32 * 2, y: 360 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
@@ -19,8 +19,8 @@ def tick args
 
   args.state.player ||= { x: 576,
                           y: 200,
-                          w: 80,
-                          h: 80,
+                          w: 32,
+                          h: 32,
                           path: '/sprites/square/green.png' }
 
   args.outputs.labels  << { x: 640,
@@ -38,15 +38,15 @@ def tick args
 
 
   if args.inputs.keyboard.left
-    args.state.player.x -= 10
+    args.state.player.x -= 5
   elsif args.inputs.keyboard.right
-    args.state.player.x += 10
+    args.state.player.x += 5
   end
 
   if args.inputs.keyboard.down
-    args.state.player.y -= 10
+    args.state.player.y -= 5
   elsif args.inputs.keyboard.up
-    args.state.player.y += 10
+    args.state.player.y += 5
   end
 
   if args.state.player.x > 1280
