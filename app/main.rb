@@ -17,10 +17,12 @@ def tick args
       { x: 640 + 32 * 2, y: 360 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
     ]
 
-  args.state.player ||= { x: 576,
-                          y: 200,
+  args.state.player ||= { x: 210,
+                          y: 360 - 32 * 2,
                           w: 32,
                           h: 32,
+                          dx: 0,
+                          dy: 0,
                           path: '/sprites/square/green.png' }
 
   args.outputs.labels  << { x: 640,
@@ -31,34 +33,50 @@ def tick args
                             anchor_y: 0.5 }
 
 
+  # rendering player and terrain
   args.outputs.sprites << args.state.player
-
   args.outputs.sprites << args.state.terrain
 
+  # set dx and dy based on inputs
+  args.state.player.dx = args.inputs.left_right * 4
+  args.state.player.dy = args.inputs.up_down * 4
 
+  # check for collisions on the x and y axis independently
 
-  if args.inputs.keyboard.left
-    args.state.player.x -= 5
-  elsif args.inputs.keyboard.right
-    args.state.player.x += 5
+  # increment player's position by dx
+  args.state.player.x += args.state.player.dx
+  
+  # check for collisions on the x axis first
+  collision = args.state.terrain.find { |t| t.intersect_rect? args.state.player }
+
+  # if there is a collision, move the player to the edge of the collision
+  # based on the direction of the player's movement and set the player's
+  # dx to 0
+  if collision
+    if args.state.player.dx > 0
+      args.state.player.x = collision.x - args.state.player.w
+    elsif args.state.player.dx < 0
+      args.state.player.x = collision.x + collision.w
+    end
+    args.state.player.dx = 0
   end
 
-  if args.inputs.keyboard.down
-    args.state.player.y -= 5
-  elsif args.inputs.keyboard.up
-    args.state.player.y += 5
-  end
+  #increment player's position by dy
+  args.state.player.y += args.state.player.dy
 
-  if args.state.player.x > 1280
-    args.state.player.x = 0
-  elsif args.state.player.x < 0
-    args.state.player.x = 1280
-  end
+  # check for collisions on the y axis
+  collision = args.state.terrain.find { |t| t.intersect_rect? args.state.player }
 
-  if args.state.player.y > 720
-    args.state.player.y = 0
-  elsif args.state.player.y < 0
-    args.state.player.y = 720
+  # if there is a collision, move the player to the edge of the collision
+  # based on the direction of the player's movement and set the player's
+  # dy to 0
+  if collision
+    if args.state.player.dy > 0
+      args.state.player.y = collision.y - args.state.player.h
+    elsif args.state.player.dy < 0
+      args.state.player.y = collision.y + collision.h
+    end
+    args.state.player.dy = 0
   end
 end
 
