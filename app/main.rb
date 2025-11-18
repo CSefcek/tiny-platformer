@@ -23,14 +23,18 @@ def tick args
                           h: 32,
                           dx: 0,
                           dy: 0,
-                          path: '/sprites/square/green.png' }
+                          path: '/sprites/square/green.png',
+                          flip_horizontally: false }
 
   args.outputs.labels  << { x: 640,
                             y: 600,
                             text: 'Score: ',
                             size_px: 30,
                             anchor_x: 0.5,
-                            anchor_y: 0.5 }
+                            anchor_y: 0.5,
+                            r: 102,
+                            g: 255,
+                            b: 227, }
 
 
   # rendering player and terrain
@@ -45,6 +49,13 @@ def tick args
 
   # increment player's position by dx
   args.state.player.x += args.state.player.dx
+
+  # flip character sprite based on dx
+  if args.state.player.dx < 0
+    args.state.player.flip_horizontally = true
+  elsif args.state.player.dx > 0
+    args.state.player.flip_horizontally = false
+  end
   
   # check for collisions on the x axis first
   collision = args.state.terrain.find { |t| t.intersect_rect? args.state.player }
