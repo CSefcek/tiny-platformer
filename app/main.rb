@@ -1,4 +1,11 @@
 def tick args
+  defaults args
+  #input args
+  calc args
+  render args
+end
+
+def defaults args
   # Black background
   args.outputs.solids << {
     x: 0,
@@ -23,8 +30,17 @@ def tick args
                           h: 32,
                           dx: 0,
                           dy: 0,
+                          action: :standing,
                           path: '/sprites/square/green.png',
                           flip_horizontally: false }
+
+  args.state.jump ||= {
+      power: 20,
+      increase_frames: 10,
+      increase_power: 1
+    }
+
+  args.state.gravity ||= -1
 
   args.outputs.labels  << { x: 640,
                             y: 600,
@@ -35,12 +51,16 @@ def tick args
                             r: 102,
                             g: 255,
                             b: 227, }
+end
+  
 
-
+def render args
   # rendering player and terrain
   args.outputs.sprites << args.state.player
   args.outputs.sprites << args.state.terrain
+end
 
+def calc args
   # set dx and dy based on inputs
   args.state.player.dx = args.inputs.left_right * 4
   args.state.player.dy = args.inputs.up_down * 4
@@ -90,5 +110,8 @@ def tick args
     args.state.player.dy = 0
   end
 end
+
+  
+
 
 $gtk.reset
