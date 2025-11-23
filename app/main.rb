@@ -1,6 +1,6 @@
 def tick args
   defaults args
-  #input args
+  input args
   calc args
   render args
 end
@@ -24,20 +24,18 @@ def defaults args
       { x: 640 + 32 * 2, y: 360 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
     ]
 
-  args.state.player ||= { x: 210,
-                          y: 360 - 32 * 2,
+  args.state.player ||= { x: 640 - 32 *2,
+                          y: 360,
                           w: 32,
                           h: 32,
                           dx: 0,
                           dy: 0,
-                          action: :standing,
+                          on_ground: false,
                           path: '/sprites/square/green.png',
                           flip_horizontally: false }
 
   args.state.jump ||= {
-      power: 20,
-      increase_frames: 10,
-      increase_power: 1
+      speed: 10
     }
 
   args.state.gravity ||= -1
@@ -60,10 +58,19 @@ def render args
   args.outputs.sprites << args.state.terrain
 end
 
+def input args
+  if args.inputs.keyboard.key_down.space && args.state.player.on_ground
+    args.state.player.dy = args.state.jump.speed
+    args.state.player.on_ground = false
+  end
+end
+
 def calc args
+  args.state.player.dy += args.state.gravity
+
   # set dx and dy based on inputs
   args.state.player.dx = args.inputs.left_right * 4
-  args.state.player.dy = args.inputs.up_down * 4
+  #args.state.player.dy = args.inputs.up_down * 4
 
   # check for collisions on the x and y axis independently
 
@@ -103,9 +110,13 @@ def calc args
   # dy to 0
   if collision
     if args.state.player.dy > 0
+      # moving up: hit head on underside of block
       args.state.player.y = collision.y - args.state.player.h
+      args.state.player.on_ground = false
     elsif args.state.player.dy < 0
+      # moving down: land on top of block
       args.state.player.y = collision.y + collision.h
+      args.state.player.on_ground = true
     end
     args.state.player.dy = 0
   end
