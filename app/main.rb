@@ -199,6 +199,16 @@ def defaults args
 
   args.state.gravity ||= -1
 
+  args.state.enemy ||= { x: 640 - 32 * 20,
+                         y: 526 - 32,
+                         w: 32,
+                         h: 32,
+                         dx: 0,
+                         dy: 0,
+                         on_ground: false,
+                         path: 'sprites/square/violet.png',
+                         flip_horizontally: false }
+
   args.outputs.labels  << { x: 640 - 16,
                             y: 700,
                             text: '20',
@@ -213,8 +223,9 @@ end
 
 def render args
   # rendering player and terrain
-  args.outputs.sprites << args.state.player
   args.outputs.sprites << args.state.terrain
+  args.outputs.sprites << args.state.player
+  args.outputs.sprites << args.state.enemy
 end
 
 def input args
