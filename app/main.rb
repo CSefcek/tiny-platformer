@@ -59,6 +59,11 @@ def defaults args
     { x: 640 + 32 * 18,  y: 526 + 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
     { x: 640 + 32 * 19,  y: 526 + 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
 
+    # top left corridor (extended offscreen part)
+    { x: 640 - 32 * 24, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
+    { x: 640 - 32 * 23, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
+    { x: 640 - 32 * 22, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
+    { x: 640 - 32 * 21, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
     # top left corridor
     { x: 640 - 32 * 20, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
     { x: 640 - 32 * 19, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
@@ -68,6 +73,11 @@ def defaults args
     { x: 640 + 32 * 17, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
     { x: 640 + 32 * 18, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
     { x: 640 + 32 * 19, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
+    # top right corridor (extended offscreen part)
+    { x: 640 + 32 * 20, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
+    { x: 640 + 32 * 21, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
+    { x: 640 + 32 * 22, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
+    { x: 640 + 32 * 23, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
 
     # left wall
     { x: 640 - 32 * 18, y: 526 - 32 * 3, w: 32, h: 32, path: 'sprites/square/blue.png' },
