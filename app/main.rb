@@ -190,11 +190,11 @@ def defaults args
                           dx: 0,
                           dy: 0,
                           on_ground: false,
-                          path: '/sprites/square/green.png',
+                          path: 'sprites/square/green.png',
                           flip_horizontally: false }
 
   args.state.jump ||= {
-      speed: 10
+      speed: 18
     }
 
   args.state.gravity ||= -1
