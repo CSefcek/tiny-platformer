@@ -6,16 +6,6 @@ def tick args
 end
 
 def defaults args
-  # Black background
-  args.outputs.solids << {
-    x: 0,
-    y: 0,
-    w: args.grid.w,
-    h: args.grid.h,
-    r: 70,
-    g: 70,
-    b: 70,
-  }
   args.state.terrain ||= [
     # roof
     { x: 640 - 32 * 20, y: 526 + 32 * 2, w: 32, h: 32, path: 'sprites/square/blue.png' },
@@ -232,6 +222,16 @@ end
   
 
 def render args
+  # Black background
+  args.outputs.solids << {
+    x: 0,
+    y: 0,
+    w: args.grid.w,
+    h: args.grid.h,
+    r: 70,
+    g: 70,
+    b: 70,
+  }
   # rendering player and terrain
   args.outputs.sprites << args.state.terrain
   args.outputs.sprites << args.state.player
