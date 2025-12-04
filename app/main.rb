@@ -230,9 +230,9 @@ def render args
     y: 0,
     w: args.grid.w,
     h: args.grid.h,
-    r: 84,
-    g: 27,
-    b: 60,
+    r: 47,
+    g: 87,
+    b: 83,
   }
   # rendering player and terrain
   args.outputs.sprites << args.state.terrain
