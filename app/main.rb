@@ -192,7 +192,7 @@ def defaults args
                           dx: 0,
                           dy: 0,
                           on_ground: false,
-                          path: 'sprites/player.png',
+                          path: 'sprites/player-4.png',
                           flip_horizontally: false }
 
   args.state.jump ||= {
