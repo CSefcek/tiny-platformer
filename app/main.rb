@@ -57,12 +57,12 @@ def defaults args
     # top left corridor
     { x: 640 - 32 * 20, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/tile/ground-tile.png' },
     { x: 640 - 32 * 19, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/tile/ground-tile.png' },
-    { x: 640 - 32 * 18, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/tile/waterfalltop-tile.png' },
+    { x: 640 - 32 * 18, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/tile/waterfalltop-tile-2.png' },
     { x: 640 - 32 * 17, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/tile/ground-tile.png' },
 
     # top right corridor
     { x: 640 + 32 * 16, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/tile/ground-tile.png' },
-    { x: 640 + 32 * 17, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/tile/waterfalltop-tile.png' },
+    { x: 640 + 32 * 17, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/tile/waterfalltop-tile-2.png' },
     { x: 640 + 32 * 18, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/tile/ground-tile.png' },
     { x: 640 + 32 * 19, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/tile/ground-tile.png' },
     # top right corridor (extended offscreen part)
@@ -72,30 +72,30 @@ def defaults args
     { x: 640 + 32 * 23, y: 526 - 32 * 2, w: 32, h: 32, path: 'sprites/tile/ground-tile.png' },
 
     # left wall
-    { x: 640 - 32 * 18, y: 526 - 32 * 3, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 - 32 * 18, y: 526 - 32 * 4, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 - 32 * 18, y: 526 - 32 * 5, w: 32, h: 32, path: 'sprites/tile/waterfalltop-tile.png' },
-    { x: 640 - 32 * 18, y: 526 - 32 * 6, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 - 32 * 18, y: 526 - 32 * 7, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 - 32 * 18, y: 526 - 32 * 8, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 - 32 * 18, y: 526 - 32 * 9, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 - 32 * 18, y: 526 - 32 * 10, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 - 32 * 18, y: 526 - 32 * 11, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 - 32 * 18, y: 526 - 32 * 12, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 - 32 * 18, y: 526 - 32 * 13, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
+    { x: 640 - 32 * 18, y: 526 - 32 * 3, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 - 32 * 18, y: 526 - 32 * 4, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 - 32 * 18, y: 526 - 32 * 5, w: 32, h: 32, path: 'sprites/tile/waterfalltop-tile-2.png' },
+    { x: 640 - 32 * 18, y: 526 - 32 * 6, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 - 32 * 18, y: 526 - 32 * 7, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 - 32 * 18, y: 526 - 32 * 8, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 - 32 * 18, y: 526 - 32 * 9, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 - 32 * 18, y: 526 - 32 * 10, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 - 32 * 18, y: 526 - 32 * 11, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 - 32 * 18, y: 526 - 32 * 12, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 - 32 * 18, y: 526 - 32 * 13, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
 
     # right wall
-    { x: 640 + 32 * 17, y: 526 - 32 * 3, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 + 32 * 17, y: 526 - 32 * 4, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 + 32 * 17, y: 526 - 32 * 5, w: 32, h: 32, path: 'sprites/tile/waterfalltop-tile.png' },
-    { x: 640 + 32 * 17, y: 526 - 32 * 6, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 + 32 * 17, y: 526 - 32 * 7, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 + 32 * 17, y: 526 - 32 * 8, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 + 32 * 17, y: 526 - 32 * 9, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 + 32 * 17, y: 526 - 32 * 10, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 + 32 * 17, y: 526 - 32 * 11, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 + 32 * 17, y: 526 - 32 * 12, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
-    { x: 640 + 32 * 17, y: 526 - 32 * 13, w: 32, h: 32, path: 'sprites/tile/waterfall-tile.png' },
+    { x: 640 + 32 * 17, y: 526 - 32 * 3, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 + 32 * 17, y: 526 - 32 * 4, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 + 32 * 17, y: 526 - 32 * 5, w: 32, h: 32, path: 'sprites/tile/waterfalltop-tile-2.png' },
+    { x: 640 + 32 * 17, y: 526 - 32 * 6, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 + 32 * 17, y: 526 - 32 * 7, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 + 32 * 17, y: 526 - 32 * 8, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 + 32 * 17, y: 526 - 32 * 9, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 + 32 * 17, y: 526 - 32 * 10, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 + 32 * 17, y: 526 - 32 * 11, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 + 32 * 17, y: 526 - 32 * 12, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
+    { x: 640 + 32 * 17, y: 526 - 32 * 13, w: 32, h: 32, path: 'sprites/tile/waterfall-tile-2.png' },
     
     # higher platforms
     { x: 640 - 32 * 17, y: 430 - 32 * 2, w: 32, h: 32, path: 'sprites/tile/ground-tile.png' },
@@ -192,7 +192,7 @@ def defaults args
                           dx: 0,
                           dy: 0,
                           on_ground: false,
-                          path: 'sprites/player-4.png',
+                          path: 'sprites/player-5.png',
                           flip_horizontally: false }
 
   args.state.jump ||= {
@@ -230,9 +230,9 @@ def render args
     y: 0,
     w: args.grid.w,
     h: args.grid.h,
-    r: 47,
-    g: 87,
-    b: 83,
+    r: 12,
+    g: 8,
+    b: 42,
   }
   # rendering player and terrain
   args.outputs.sprites << args.state.terrain
